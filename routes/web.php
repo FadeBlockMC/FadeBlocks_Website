@@ -6,22 +6,26 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('rules/home', function () {
-    return view('rules/home');
+
+// rules
+
+Route::get('/rules', function () {
+    return view('rules.home');
 });
 
-Route::get('/leaderboards/skyblock', function () {
-    return view('leaderboards/skyblock');
+Route::get('/rules/network', function () {
+    return view('rules.network');
 });
 
-Route::get('/leaderboards/survival', function () {
-    return view('leaderboards/survival');
+Route::get('/rules/skyblock', function () {
+    return view('rules.skyblock');
 });
 
-Route::get('/forumpage', function () {
-    return view('forumpage');
+Route::get('/rules/allowed-modifications', function () {
+    return view('rules.allowed-modifications');
 });
 
-Route::get('/createforum', function () {
-    return view('createforum');
+Route::get('/rules/forum', function () {
+    return view('rules.forum-rules');
 });
+

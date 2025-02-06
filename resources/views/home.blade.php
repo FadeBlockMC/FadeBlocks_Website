@@ -3,91 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacked Background Images</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            overflow-y: auto;
-            height: 100vh;
-        }
-        .section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            scroll-snap-align: start;
-        }
-        .section-intro {
-            background-image: url('images/background/background1.png');
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            height: 100vh;
-            padding-left: 50px;
-            text-align: left;
-            scroll-snap-align: start;
-        }
-        .section-intro img {
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-        .section:nth-child(2) {
-            background-image: url('images/background/background2.png');
-        }
-        .section:nth-child(3) {
-            background-image: url('images/background/background3.png');
-        }
-        .section:nth-child(4) {
-            background-image: url('images/background/background4.png');
-        }
-        .section:nth-child(5) {
-            background-image: url('images/background/background5.png');
-        }
-        html {
-            scroll-snap-type: y mandatory;
-        }
-    </style>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>FadeBlocksMC</title>
 </head>
-<body>
-    <div class="section-intro">
-        <img src="images/background/fadeblockslogo.png" alt="Fade Blocks Logo">
-        <h1>Welcome to Fade Blocks</h1>
-    </div>
-    <div class="section">Survival</div>
-    <div class="section">Prison</div>
-    <div class="section"></div>
-    <div class="section">skyblock</div>
 
-    <script>
-        document.documentElement.style.scrollBehavior = 'smooth';
-        window.addEventListener('wheel', (event) => {
-            if (event.deltaY > 0) {
-                setTimeout(() => {
-                    window.scrollBy(0, window.innerHeight);
-                }, 1); // Adjust the delay as needed
-            } else {
-                setTimeout(() => {
-                    window.scrollBy(0, -window.innerHeight);
-                }, 1); // Adjust the delay as needed
-            }
-            event.preventDefault();
-        }, { passive: false });
-    </script>
+<header>
+    @include('header_footer.header')
+
+</header>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-2 space-y-6">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold text-yellow-400">Announcements</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+                    <p class="text-gray-400 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae.</p>
+
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    @include('widgets.side_widgets')
+                </div>
+
+                <div id="live-streamers-container" class="bg-gray-800 p-4 rounded-lg shadow-lg hidden">
+                    <p class="text-yellow-400 font-bold">Live Streamers</p>
+                    <ul class="mt-2 space-y-1 text-sm text-gray-400" id="live-streamers-list">
+                        <p>SRPK is live</p>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <p class="text-yellow-400 font-bold">Social Media</p>
+                    <ul class="mt-2 space-y-1 text-sm text-gray-400">
+                        <div class="social-icons flex space-x-4">
+                            <a href="https://discord.gg/KtZbQshydJ" target="_blank">
+                                <img src="{{ asset('images/socials/discord.png') }}" alt="Discord" class="w-12 h-12">
+                            </a>
+                            <a href="https://x.com/fadeblocksmc" target="_blank">
+                                <img src="{{ asset('images/socials/twitter.png') }}" alt="Twitter" class="w-12 h-12">
+                            </a>
+                            <a href="https://www.tiktok.com/@fadeblocksmc" target="_blank">
+                                <img src="{{ asset('images/socials/tiktok.png') }}" alt="TikTok" class="w-12 h-12">
+                            </a>
+                            <a href="https://www.instagram.com/fadeblocksmc/" target="_blank">
+                                <img src="{{ asset('images/socials/instagram.png') }}" alt="Instagram" class="w-12 h-12">
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        @include('header_footer.footer')
+    </footer>
 </body>
 </html>
+
+
+<script>
+    const clientId = 'YOUR_CLIENT_ID'; 
+    const accessToken = 'YOUR_ACCESS_TOKEN';  
+    const streamerName = 'SrPK_07';  
+
+    fetch(`https://api.twitch.tv/helix/streams?user_login=${streamerName}`, {
+        headers: {
+            'Client-ID': clientId,
+            'Authorization': `Bearer ${accessToken}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.data && data.data.length > 0) {
+            document.getElementById('live-streamers-container').classList.remove('hidden');
+            
+            const streamerData = data.data[0];
+            const liveList = document.getElementById('live-streamers-list');
+            liveList.innerHTML = `
+                <li>
+                    <a href="https://www.twitch.tv/${streamerName}" target="_blank" class="text-purple-400 font-bold">
+                        ${streamerData.user_name} is LIVE: ${streamerData.title}
+                    </a>
+                </li>
+            `;
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Twitch data:', error);
+    });
+</script>

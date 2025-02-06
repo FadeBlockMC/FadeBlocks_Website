@@ -3,117 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
-        }
-        nav {
-            background: url('gold-texture.jpg') no-repeat center center;
-            background-size: cover;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .nav-container {
-            display: flex;
-            background-color: #d4af37;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .nav-container a {
-            color: black;
-            text-decoration: none;
-            padding: 10px 15px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .nav-container a:hover {
-            background-color: #b8860b;
-            border-radius: 5px;
-            color: white;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            position: relative;
-            display: inline-block;
-        }
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #d4af37;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        nav ul li ul li {
-            display: block;
-        }
-        nav ul li ul li a {
-            padding: 10px 15px;
-            display: block;
-        }
-        nav ul li ul li a:hover {
-            background-color: #b8860b;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/rules/home">Rules</a></li>
-                <li>
-                    <a href="#">Leaderboard</a>
-                    <ul>
-                        <li><a href="/leaderboards/skyblock">Skyblock</a></li>
-                        <li><a href="/leaderboards/survival">Survival (soon)</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Forum</a>
-                    <ul>
-                        <li><a href="/forums/forum">Forum Page</a></li>
-                        <li><a href="/create">Create Forum</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var dropdowns = document.querySelectorAll('nav ul li a');
-            dropdowns.forEach(function(dropdown) {
-                dropdown.addEventListener('click', function(event) {
-                    var submenu = this.nextElementSibling;
-                    if (submenu && submenu.tagName === 'UL') {
-                        event.preventDefault();
-                        var openSubmenus = document.querySelectorAll('nav ul li ul');
-                        openSubmenus.forEach(function(openSubmenu) {
-                            if (openSubmenu !== submenu) {
-                                openSubmenu.style.display = 'none';
-                            }
-                        });
-                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-                    }
-                });
-            });
-        });
-    </script>
+    <title>FadeBlocksMC</title>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+            </div>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="/rules" class="hover:text-yellow-400">Rules</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Forums</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Updates</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Wiki</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Support</a></li>
+                <li><a href="#" class="hover:text-yellow-400">More</a></li>
+            </ul>
+            <div>
+                <a href="https://store.fadeblocksmc.com" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Store</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 text-center">
+        <img src="{{ asset('images/logo/FadeBlocksMCC.png') }}" alt="FadeBlocksMC Logo" class="h-10"></head>
+        <h1 class="text-5xl font-extrabold text-yellow-400">FadeBlocksMC</h1>
+        <div class="mt-4">
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded mr-2">Log in</button>
+            <button class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded">Register</button>
+        </div>
+
+    </main>
 </body>
 </html>
