@@ -15,35 +15,15 @@
         <aside class="bg-gray-800 p-4 shadow-md rounded-lg md:col-span-1">
             <h2 class="font-bold text-lg mb-4 text-yellow-400">Menu</h2>
             <nav class="space-y-2">
-                <a href="/wiki/home" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Home</a>
-                <a href="/wiki/rules" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rules</a>
+                <a href="/wiki" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Home</a>
+                <a href="/wiki/faq" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rules</a>
                 <a href="/wiki/commands" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Commands</a>
-                <a href="/wiki/rank-perks" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rank Perks</a>
                 <a href="/wiki/faq" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">FAQ</a>
-                <a href="/wiki/dungeons" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Dungeons</a>
-                <a href="/wiki/discontinued-items" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Discontinued Items</a>
+                <a href="/wiki/skyblock" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">skyblock</a>
             </nav>
         </aside>
-
         <!-- Main Content -->
         <main class="bg-gray-800 p-6 shadow-md rounded-lg md:col-span-3">
-            <h1 class="text-3xl font-bold mb-2 text-yellow-400">FadeBlocksMC Network Rules</h1>
-            <p class="text-gray-400 mb-4">2 months ago • Updated</p>
-
-            <p class="text-gray-300 mb-6">
-                The FadeBlocksMC Server is intended to be a fun, safe, and friendly environment for all players to enjoy. As such, we have a list of rules we expect all players to follow with no exceptions. <span class="font-bold text-white">By choosing to play on the FadeBlocksMC Server or use the FadeBlocksMC Forums and Discord, you agree to follow all rules listed within the FadeBlocksMC Rules and Policies.</span>
-            </p>
-
-            <h2 class="font-bold text-lg mb-2 text-yellow-400">Table of Content</h2>
-            <ul class="list-disc list-inside text-gray-300 mb-8">
-                <li><a href="#expectations" class="text-indigo-400 hover:underline">Expectations of Behavior</a></li>
-                <li><a href="#reporting" class="text-indigo-400 hover:underline">Reporting Rule Breakers</a></li>
-                <li><a href="#bugs" class="text-indigo-400 hover:underline">Report Server Bugs</a></li>
-                <li><a href="#safety" class="text-indigo-400 hover:underline">Player Safety & Account Security</a></li>
-                <li><a href="#prohibited" class="text-indigo-400 hover:underline">Behavior that is not allowed</a></li>
-                <li><a href="#consequences" class="text-indigo-400 hover:underline">Consequences</a></li>
-            </ul>
-
             <!-- Sections -->
             <section id="expectations" class="mb-8">
                 <img src="{{ asset('images/rules/behavior.png') }}" alt="Expectations of Behavior" class="w-full rounded-lg mb-4">

@@ -9,7 +9,41 @@
 
 <header>
     @include('header_footer.header')
+    @if (Auth::check())
+    <img src="{{ Auth::user()->avatar }}" alt="User Avatar" class="w-20 h-20 rounded-full">
+@else
+    <!-- Default to Renssus's skin if user is not logged in -->
+    <img src="https://crafatar.com/avatars/e088f399-8135-4d9f-ae8f-a60a13886965?size=100&overlay" alt="Default Avatar" class="w-20 h-20 rounded-full">
+@endif
 
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+
+                <div class="card-body">
+                    @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        </div>
+                    @endif
+
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }},
+                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 </header>
 <body class="bg-gray-900 text-white">
     <div class="container mx-auto px-4 py-8">
