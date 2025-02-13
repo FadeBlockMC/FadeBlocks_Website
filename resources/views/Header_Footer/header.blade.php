@@ -16,7 +16,7 @@
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <ul class="flex space-x-6 text-lg">
                 <li><a href="/" class="hover:text-yellow-400">Home</a></li>
-                <li><a href="/rules" class="hover:text-yellow-400">Rules</a></li>
+                <li><a href="rules" class="hover:text-yellow-400">Rules</a></li>
                 <li><a href="#" class="hover:text-yellow-400">Forums</a></li>
                 <li><a href="#" class="hover:text-yellow-400">Updates</a></li>
                 <li><a href="/wiki" class="hover:text-yellow-400">Wiki</a></li>
@@ -30,6 +30,18 @@
     </header>
 
     <main class="container mx-auto px-4 py-8 text-center">
+        @if (session('resent'))
+            <div class="alert alert-success" role="alert">
+                {{ __('A fresh verification link has been sent to your email address.') }}
+            </div>
+        @endif
+
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
         <img src="{{ asset('images/logo/FadeBlocksMCC.png') }}" alt="FadeBlocksMC Logo" class="h-10">
         <h1 class="text-5xl font-extrabold text-yellow-400">FadeBlocksMC</h1>
         <div class="mt-4">

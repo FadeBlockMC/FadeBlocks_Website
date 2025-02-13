@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 
 Route::get('/', function () {
@@ -59,7 +60,14 @@ Route::get('/staff', function () {
 // Contact
 
 
+Route::get('/test-email', function () {
+    Mail::raw('This is a test email', function ($message) {
+        $message->to('renswinckens@gmail.com')
+                ->subject('Test Email');
+    });
 
+    return 'Test email sent!';
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

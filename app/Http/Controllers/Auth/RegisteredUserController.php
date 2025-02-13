@@ -10,7 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Http;  // Add this for Mojang API
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -37,25 +37,26 @@ class RegisteredUserController extends Controller
             'password' => ['required', Rules\Password::defaults()],
         ]);
 
-        // Check if the name matches a Minecraft account
         $mojangResponse = Http::get("https://api.mojang.com/users/profiles/minecraft/{$request->name}");
 
         if ($mojangResponse->successful()) {
             $uuid = $mojangResponse->json()['id'];
             $avatarLink = "https://crafatar.com/avatars/{$uuid}?size=100&overlay";
         } else {
-            // Use Renssus skin if Minecraft account is not found
+            // Use Steve skin if Minecraft account is not found
             $uuid = null;
-            $avatarLink = "https://crafatar.com/avatars/e088f399-8135-4d9f-ae8f-a60a13886965?size=100&overlay"; // Steve UUID
+            $avatarLink = asset('images/steve.png'); // Use local Steve skin
         }
 
-        // Create user with the avatar link
+        // Create user with the avatar link and uuid
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'avatar' => $avatarLink,  // Save the Crafatar link
+            'avatar' => $avatarLink,
             'uuid' => $uuid,
+            'rank' => 'player', 
+            'subrank' => 'member',
         ]);
 
         // Default permissions for new user
@@ -64,9 +65,9 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         Auth::login($user);
 
+        // Send email verification notification
         $user->sendEmailVerificationNotification();
 
-
-        return redirect()->route('home');
+        return redirect()->route('verification.notice')->with('resent', true);
     }
 }

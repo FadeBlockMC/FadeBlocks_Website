@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
-                <img src="{{ asset('images/logo/skinmc-avatar.png') }}" alt="IHaveWincks Avatar" class="rounded w-12 h-12">
+                <img src="https://crafatar.com/renders/body/e088f399-8135-4d9f-ae8f-a60a13886965?size=100&overlay" alt="Default Avatar">
                 <div>
                     <h3 class="text-purple-400 font-bold">IHaveWincks</h3>
                     <p class="text-gray-400">Manager</p>
@@ -37,7 +37,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <!-- Admin Card Template -->
             <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4">
-                <img src="{{ asset('images/logo/skinmc-avatar.png') }}" alt="Gebyce Avatar" class="rounded w-12 h-12">
+                <img src="https://crafatar.com/renders/head/e088f399-8135-4d9f-ae8f-a60a13886965?size=100&overlay" alt="Default Avatar">
                 <div>
                     <h3 class="text-purple-400 font-bold">Gebyce</h3>
                     <p class="text-gray-400">Operator | Staff Manager</p>
