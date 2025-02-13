@@ -7,19 +7,23 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class StaffMiddleware
 {
     /**
      * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if user is logged in and has subrank = 'admin'
-        if (Auth::check() && Auth::user()->subrank === 'admin') {
+        // Check if user is logged in and has subrank = 'staff' or 'admin'
+        if (Auth::check() && in_array(Auth::user()->subrank, ['staff', 'admin'])) {
             return $next($request);
         }
 
-        // Return unauthorized response if user is not an admin
+        // Redirect or return unauthorized response if not staff or admin
         return response()->json(['message' => 'Unauthorized'], 403);
     }
 }

@@ -7,6 +7,10 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StaffController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\StaffMiddleware;
 
 Route::get('/', function () {
     return view('home');
@@ -58,6 +62,15 @@ Route::get('/staff', function () {
 
 
 // Contact
+
+// staff page
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin-dashboard', [AdminController::class, 'index']);
+});
+
+Route::middleware([StaffMiddleware::class])->group(function () {
+    Route::get('/staff-dashboard', [StaffController::class, 'index']);
+});
 
 
 Route::get('/test-email', function () {
