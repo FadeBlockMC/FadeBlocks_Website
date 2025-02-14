@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\VerifyEmailController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\ProfileController;
+
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\StaffMiddleware;
 
@@ -50,10 +53,46 @@ Route::get('/wiki/skyblock', function () {
     return view('wiki.skyblock');
 });
 
-// Staff
-Route::get('/staff', function () {
-    return view('staff.staff');
+// Staff   
+Route::get('/staff/home', [StaffController::class, 'index'])->middleware(middleware: StaffMiddleware::class);
+
+
+Route::get('/staff/list', function () {
+    return view('staff.staff_list');
 });
+
+// TODO ADD AUTH/Protection
+Route::get('/staff/applications', function () {
+    return view('staff.applications');
+});
+
+Route::get('/staff/punishments', function () {
+    return view('staff.only_staff.staff_punishments');
+});
+
+
+Route::get('/staff/rules', function () {
+    return view('staff.only_staff.staff_rules');
+});
+
+// Admin
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/home',
+     [AdminController::class, 'index']);
+});
+
+Route::get('/admin/application', function () {
+    return view('admin.applications');
+});
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/home', [AdminController::class, 'index']);
+    Route::get('/admin/messages', [MessageController::class, 'index'])->name('admin.messages');
+    Route::post('/admin/messages/update/{id}', [MessageController::class, 'update'])->name('admin.messages.update');
+});
+Route::get('/admin/panel/message', function () {
+    return view('admin.message_panel');
+});
+
 
 // Applications
 
@@ -62,16 +101,6 @@ Route::get('/staff', function () {
 
 
 // Contact
-
-// staff page
-Route::middleware([AdminMiddleware::class])->group(function () {
-    Route::get('/admin-dashboard', [AdminController::class, 'index']);
-});
-
-Route::middleware([StaffMiddleware::class])->group(function () {
-    Route::get('/staff-dashboard', [StaffController::class, 'index']);
-});
-
 
 Route::get('/test-email', function () {
     Mail::raw('This is a test email', function ($message) {

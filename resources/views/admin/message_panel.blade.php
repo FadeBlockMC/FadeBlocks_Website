@@ -6,7 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<header>
+    @include('header_footer.header')
+
+</header>
 <body>
-    <p>staff logo</p>
-</body>
+    
+    </body>
+    <footer>
+    @include('header_footer.footer')
+</footer>
 </html>

@@ -8,6 +8,6 @@ class StaffController extends Controller
 {
     public function index()
     {
-        return view('admin.staff'); 
+        return view(view: 'staff.only_staff.staff_home'); 
     }
 }

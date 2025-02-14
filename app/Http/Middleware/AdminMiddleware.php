@@ -14,12 +14,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if user is logged in and has subrank = 'admin'
-        if (Auth::check() && Auth::user()->subrank === 'admin') {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You are not logged in!');
+        }
+
+        if (in_array(Auth::user()->subrank, ['admin'])) {
             return $next($request);
         }
 
-        // Return unauthorized response if user is not an admin
-        return response()->json(['message' => 'Unauthorized'], 403);
+        return redirect()->route('home')->with('error', 'You do not have the required permissions!');
     }
 }

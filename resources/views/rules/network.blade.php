@@ -15,13 +15,11 @@
         <aside class="bg-gray-800 p-4 shadow-md rounded-lg md:col-span-1">
             <h2 class="font-bold text-lg mb-4 text-yellow-400">Menu</h2>
             <nav class="space-y-2">
-                <a href="/wiki/home" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Home</a>
-                <a href="/wiki/rules" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rules</a>
-                <a href="/wiki/commands" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Commands</a>
-                <a href="/wiki/rank-perks" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rank Perks</a>
-                <a href="/wiki/faq" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">FAQ</a>
-                <a href="/wiki/dungeons" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Dungeons</a>
-                <a href="/wiki/discontinued-items" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Discontinued Items</a>
+                <a href="/rules/home" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Home</a>
+                <a href="/rules/rules" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rules</a>
+                <a href="/rules/commands" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Commands</a>
+                <a href="/rules/rank-perks" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">Rank Perks</a>
+                <a href="/rules/faq" class="block p-2 bg-gray-700 text-gray-400 hover:text-indigo-300 rounded">FAQ</a>
             </nav>
         </aside>
 

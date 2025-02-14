@@ -24,6 +24,16 @@
                 <li><a href="#" class="hover:text-yellow-400">More</a></li>
             </ul>
             <div>
+                @auth
+                    @if (in_array(Auth::user()->subrank, ['staff', 'admin']))
+                        <a href="/staff/home" class="hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Staff</a>
+                    @endif
+                    @if (in_array(Auth::user()->subrank, ['admin']))
+                        <a href="/admin/home" class="hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Admin</a>
+                    @endif
+                @endauth
+            </div>
+            <div>
                 <a href="https://store.fadeblocksmc.com" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Store</a>
             </div>
         </nav>
