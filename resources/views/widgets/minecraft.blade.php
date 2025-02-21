@@ -1,6 +1,6 @@
 <div class="bg-gray-800 p-4 rounded-lg flex items-center space-x-4 shadow-lg">
     <div>
-        <p class="text-lg font-bold text-white" id="server-ip">play.fadeblocksmc.com</p>
+        <p class="text-lg font-bold text-white" id="server-ip">play.fadeblocks.com</p>
         <p id="player-count" class="text-gray-400 text-sm">Loading...</p>
     </div>
     <div class="ml-auto">
@@ -11,7 +11,7 @@
 </div>
 
 <script>
-    fetch('https://api.mcsrvstat.us/2/fadeblocksmc.mcplay.nu')
+    fetch('https://api.mcsrvstat.us/2/play.fadeblocks.com')
         .then(response => response.json())
         .then(data => {
             if (data.online) {

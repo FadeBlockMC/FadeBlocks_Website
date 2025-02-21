@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('message');
             $table->enum('topic', ['wiki', 'rules', 'information', 'updates', 'staff', 'admin'])->default('information');
+            $table->text("sub-topic")->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>FadeBlocksMC Rules</title>
+    <title>FadeBlocks Rules</title>
 </head>
 
 <header>
@@ -13,7 +13,7 @@
 <body class="bg-gray-900 text-white">
     <header class="bg-gray-800 py-6 shadow-lg">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-extrabold text-white">FADEBLOCKSMC RULES</h1>
+            <h1 class="text-4xl font-extrabold text-white">FADEBLOCKS RULES</h1>
             <p class="text-gray-400 mt-2">by <span class="font-bold">Renssus</span>, Jan 1, 2025</p>
         </div>
     </header>

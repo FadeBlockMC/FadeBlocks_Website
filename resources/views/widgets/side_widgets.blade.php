@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>FadeBlocksMC - Server Status</title>
+    <title>FadeBlocks - Server Status</title>
 </head>
 <body class="bg-gray-900 text-white">
     <div class="container mx-auto px-4 py-8">
@@ -34,7 +34,7 @@
 
     <!-- Minecraft Server API Fetch -->
     <script>
-        fetch('https://api.mcsrvstat.us/2/fadeblocksmc.mcplay.nu')
+        fetch('https://api.mcsrvstat.us/2/play.fadeblocks.com')
             .then(response => response.json())
             .then(data => {
                 if (data.online) {
@@ -51,7 +51,7 @@
         // Copy to clipboard functionality
         const copyBtn = document.getElementById('copy-btn');
         copyBtn.addEventListener('click', function() {
-            const serverIP = 'play.fadeblocksmc.com';
+            const serverIP = 'play.fadeblocks.com';
             navigator.clipboard.writeText(serverIP).then(() => {
                 copyBtn.textContent = 'COPIED';
                 setTimeout(() => {

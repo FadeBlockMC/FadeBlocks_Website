@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FadeBlocksMC Server Rules</title>
+    <title>FadeBlocks Server Rules</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white">
@@ -28,7 +28,7 @@
             <p class="text-gray-400 mb-4">2 months ago • Updated</p>
 
             <p class="text-gray-300 mb-6">
-                The FadeBlocksMC Server is intended to be a fun, safe, and friendly environment for all players to enjoy. As such, we have a list of rules we expect all players to follow with no exceptions. <span class="font-bold text-white">By choosing to play on the FadeBlocksMC Server or use the FadeBlocksMC Forums and Discord, you agree to follow all rules listed within the FadeBlocksMC Rules and Policies.</span>
+                The FadeBlocks Server is intended to be a fun, safe, and friendly environment for all players to enjoy. As such, we have a list of rules we expect all players to follow with no exceptions. <span class="font-bold text-white">By choosing to play on the FadeBlocks Server or use the FadeBlocks Forums and Discord, you agree to follow all rules listed within the FadeBlocks Rules and Policies.</span>
             </p>
 
             <h2 class="font-bold text-lg mb-2 text-yellow-400">Table of Content</h2>

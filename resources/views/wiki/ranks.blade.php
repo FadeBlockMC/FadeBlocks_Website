@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FadeBlocksMC Wiki</title>
+    <title>FadeBlocks Wiki</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white">
@@ -55,10 +55,10 @@
                 <h2 class="text-2xl font-bold text-yellow-400">Server Links</h2>
                 <p class="text-sm text-gray-400">The server version is on 1.21.3</p>
                 <ul class="mt-2 space-y-1">
-                    <li><span class="font-bold text-white">Java IP:</span> <a href="#" class="text-yellow-400">play.fadeblocksmc.com</a></li>
-                    <li><span class="font-bold text-white">Bedrock IP:</span> <a href="#" class="text-yellow-400">play.fadeblocksmc.com</a> <span class="text-gray-400">Port: 19132</span></li>
-                    <li><span class="font-bold text-white">Discord:</span> <a href="https://discord.gg/fadeblocksmc" class="text-yellow-400">https://discord.gg/fadeblocksmc</a></li>
-                    <li><span class="font-bold text-white">Shop:</span> <a href="https://store.fadeblocksmc.com/" class="text-yellow-400">https://store.fadeblocksmc.com/</a></li>
+                    <li><span class="font-bold text-white">Java IP:</span> <a href="#" class="text-yellow-400">play.fadeblocks.com</a></li>
+                    <li><span class="font-bold text-white">Bedrock IP:</span> <a href="#" class="text-yellow-400">play.fadeblocks.com</a> <span class="text-gray-400">Port: 19132</span></li>
+                    <li><span class="font-bold text-white">Discord:</span> <a href="https://discord.gg/fadeblocks" class="text-yellow-400">https://discord.gg/fadeblocks</a></li>
+                    <li><span class="font-bold text-white">Shop:</span> <a href="https://store.fadeblocks.com/" class="text-yellow-400">https://store.fadeblocks.com/</a></li>
                 </ul>
             </section>
 
@@ -72,7 +72,7 @@
                     <li><a href="https://topminecraftservers.org/vote/29453" class="text-yellow-400 hover:underline">https://topminecraftservers.org/vote/29453</a></li>
                     <li><a href="https://minecraftbestservers.com/server-blossomcraft.277/vote" class="text-yellow-400 hover:underline">https://minecraftbestservers.com/server-blossomcraft.277/vote</a></li>
                     <li><a href="https://minecraftbestservers.com/account/server/3959" class="text-yellow-400 hover:underline">https://minecraftbestservers.com/account/server/3959</a></li>
-                    <li><a href="https://play-minecraft-servers.com/minecraft-servers/fadeblocksmc/" class="text-yellow-400 hover:underline">https://play-minecraft-servers.com/minecraft-servers/fadeblocksmc/</a></li>
+                    <li><a href="https://play-minecraft-servers.com/minecraft-servers/fadeblocks/" class="text-yellow-400 hover:underline">https://play-minecraft-servers.com/minecraft-servers/fadeblocks/</a></li>
                     <li><a href="https://topg.org/add" class="text-yellow-400 hover:underline">https://topg.org/add</a></li>
                     <li><a href="https://minecraftpocket-servers.com/" class="text-yellow-400 hover:underline">https://minecraftpocket-servers.com/</a></li>
                     <li><a href="https://servers-minecraft.net/" class="text-yellow-400 hover:underline">https://servers-minecraft.net/</a></li>

@@ -11,8 +11,8 @@
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-start">
             <!-- Left Section -->
             <div class="space-y-2 md:w-1/2">
-                <p class="text-sm text-gray-400">Copyright &copy; <span class="font-bold">FadeBlocksMC</span> 2025. All Rights All Rights Reserved.</p>
-                <p class="text-gray-500">The FadeBlocksMC network is not endorsed by Mojang </p>
+                <p class="text-sm text-gray-400">Copyright &copy; <span class="font-bold">FadeBlocks</span> 2025. All Rights All Rights Reserved.</p>
+                <p class="text-gray-500">The FadeBlocks network is not endorsed by Mojang </p>
             </div>
 
             <!-- Right Section Links -->

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>FadeBlocksMC</title>
+    <title>FadeBlocks</title>
     <style>
         [x-cloak] { display: none; }
     </style>
@@ -34,7 +34,7 @@
                 @endauth
             </div>
             <div>
-                <a href="https://store.fadeblocksmc.com" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Store</a>
+                <a href="https://store.fadeblocks.com" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Store</a>
             </div>
         </nav>
     </header>
@@ -52,8 +52,8 @@
             </div>
         @endif
 
-        <img src="{{ asset('images/logo/FadeBlocksMCC.png') }}" alt="FadeBlocksMC Logo" class="h-10">
-        <h1 class="text-5xl font-extrabold text-yellow-400">FadeBlocksMC</h1>
+        <img src="{{ asset('images/logo/FadeBlocksMCC.png') }}" alt="FadeBlocks Logo" class="h-10">
+        <h1 class="text-5xl font-extrabold text-yellow-400">FadeBlocks</h1>
         <div class="mt-4">
             @auth
                 <p class="text-lg text-yellow-400">Hello, {{ Auth::user()->name }}!</p>

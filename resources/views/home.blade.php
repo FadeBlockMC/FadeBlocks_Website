@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>FadeBlocksMC</title>
+    <title>FadeBlocks</title>
 </head>
 
 <header>
@@ -64,13 +64,13 @@
                             <a href="https://discord.gg/KtZbQshydJ" target="_blank">
                                 <img src="{{ asset('images/socials/discord.png') }}" alt="Discord" class="w-12 h-12">
                             </a>
-                            <a href="https://x.com/fadeblocksmc" target="_blank">
+                            <a href="https://x.com/fadeblocks" target="_blank">
                                 <img src="{{ asset('images/socials/twitter.png') }}" alt="Twitter" class="w-12 h-12">
                             </a>
-                            <a href="https://www.tiktok.com/@fadeblocksmc" target="_blank">
+                            <a href="https://www.tiktok.com/@fadeblocks" target="_blank">
                                 <img src="{{ asset('images/socials/tiktok.png') }}" alt="TikTok" class="w-12 h-12">
                             </a>
-                            <a href="https://www.instagram.com/fadeblocksmc/" target="_blank">
+                            <a href="https://www.instagram.com/fadeblocks/" target="_blank">
                                 <img src="{{ asset('images/socials/instagram.png') }}" alt="Instagram" class="w-12 h-12">
                             </a>
                         </div>
