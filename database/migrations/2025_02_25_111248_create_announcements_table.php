@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->text('content'); // This will store the WYSIWYG content (HTML)
-
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
         });
     }
