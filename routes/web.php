@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/admin', function () {
     return view('admin.admin_home_page');
