@@ -8,5 +8,9 @@
 </head>
 <body>
     <p>home</p>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/admin">dashboard</a>
+
 </body>
 </html>
