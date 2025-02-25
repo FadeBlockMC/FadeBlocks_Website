@@ -2,31 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\Announcement;
 
 class AnnouncementController extends Controller
 {
-    public function create()
+    public function index()
     {
-        return view('admin.create_announcement');
+        $announcements = Announcement::latest()->get();
+        return view('admin.announcements.index', compact('announcements'));
     }
 
-    // Store the new announcement
     public function store(Request $request)
     {
-        // Validate the incoming request
         $request->validate([
             'content' => 'required|string',
         ]);
 
-        // Create a new announcement and save it to the database
         Announcement::create([
             'content' => $request->input('content'),
         ]);
 
-        // Redirect back with a success message
-        return redirect()->route('admin.announcements.create')
-                         ->with('success', 'Announcement created successfully!');
+        return redirect()->route('announcements.index')->with('success', 'Announcement saved successfully!');
     }
 }
