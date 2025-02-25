@@ -12,9 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('permission');
+            $table->unsignedInteger('role_id');
+
+            $table->foreign('role_id')->references('id')->on('roles')->cascadeOnDelete();
         });
+
     }
 
     /**
