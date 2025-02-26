@@ -34,7 +34,7 @@
 
     <!-- Minecraft Server API Fetch -->
     <script>
-        fetch('https://api.mcsrvstat.us/2/fadeblocksmc.mcplay.nu')
+        fetch('https://api.mcsrvstat.us/2/play.fadeblocks.com')
             .then(response => response.json())
             .then(data => {
                 if (data.online) {
