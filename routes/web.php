@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/admin', function () {
-    return view('admin.admin_home_page');
-});
+// Route::get('/admin', function () {
+//     return view('admin.admin_home_page');
+// });
 
-Route::get('/admin/announcements', function () {
-    return view('admin.announcements.index');
-});
+// Route::get('/admin/announcements', function () {
+//     return view('admin.announcements.index');
+// });
 
 
 Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcements.index');
