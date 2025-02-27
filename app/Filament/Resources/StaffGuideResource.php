@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RulesResource\Pages;
-use App\Filament\Resources\RulesResource\RelationManagers;
-use App\Models\Rules;
+use App\Filament\Resources\StaffGuideResource\Pages;
+use App\Filament\Resources\StaffGuideResource\RelationManagers;
+use App\Models\StaffGuide;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,28 +13,20 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class RulesResource extends Resource
+class StaffGuideResource extends Resource
 {
-    protected static ?string $model = Rules::class;
+    protected static ?string $model = StaffGuide::class;
 
-    protected static ?string $navigationGroup = 'Rules';
+    protected static ?string $navigationGroup = 'Staff';
 
+    
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('category')
-                    ->options([
-                        'network' => 'Network',
-                        'Survival' => 'Survival',
-                        'Skyblock' => 'Skyblock',
-                    ])
-                    ->required(),
-    
-                Forms\Components\RichEditor::make('content')
-                    ->required(),
+                //
             ]);
     }
 
@@ -42,8 +34,7 @@ class RulesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('category')
-                ->label('Category'),
+                //
             ])
             ->filters([
                 //
@@ -68,9 +59,9 @@ class RulesResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRules::route('/'),
-            'create' => Pages\CreateRules::route('/create'),
-            'edit' => Pages\EditRules::route('/{record}/edit'),
+            'index' => Pages\ListStaffGuides::route('/'),
+            'create' => Pages\CreateStaffGuide::route('/create'),
+            'edit' => Pages\EditStaffGuide::route('/{record}/edit'),
         ];
     }
 }
