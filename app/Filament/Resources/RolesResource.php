@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\WikiResource\Pages;
-use App\Filament\Resources\WikiResource\RelationManagers;
-use App\Models\Wiki;
+use App\Filament\Resources\RolesResource\Pages;
+use App\Filament\Resources\RolesResource\RelationManagers;
+use App\Models\Roles;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,14 +13,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\RichEditor;
-class WikiResource extends Resource
+class RolesResource extends Resource
 {
-    protected static ?string $model = Wiki::class;
+    protected static ?string $model = Roles::class;
 
-    protected static ?string $navigationGroup = 'Server Information';
+    protected static ?string $navigationGroup = 'Users';
+
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,16 +26,7 @@ class WikiResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('category')
-                    ->options([
-                        'network' => 'Network',
-                        'Survival' => 'Survival',
-                        'Skyblock' => 'Skyblock',
-                    ])
-                    ->required(),
-    
-                RichEditor::make('content')
-                    ->required(),
+                //
             ]);
     }
 
@@ -70,9 +59,9 @@ class WikiResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListWikis::route('/'),
-            'create' => Pages\CreateWiki::route('/create'),
-            'edit' => Pages\EditWiki::route('/{record}/edit'),
+            'index' => Pages\ListRoles::route('/'),
+            'create' => Pages\CreateRoles::route('/create'),
+            'edit' => Pages\EditRoles::route('/{record}/edit'),
         ];
     }
 }

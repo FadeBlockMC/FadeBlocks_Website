@@ -13,6 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\RichEditor;
+
+
 class RulesResource extends Resource
 {
     protected static ?string $model = Rules::class;
@@ -25,7 +30,7 @@ class RulesResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('category')
+                Select::make('category')
                     ->options([
                         'network' => 'Network',
                         'Survival' => 'Survival',
@@ -33,7 +38,7 @@ class RulesResource extends Resource
                     ])
                     ->required(),
     
-                Forms\Components\RichEditor::make('content')
+                RichEditor::make('content')
                     ->required(),
             ]);
     }

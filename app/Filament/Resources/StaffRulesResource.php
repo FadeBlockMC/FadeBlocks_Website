@@ -13,6 +13,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\RichEditor;
 class StaffRulesResource extends Resource
 {
     protected static ?string $model = StaffRules::class;
@@ -25,7 +27,16 @@ class StaffRulesResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Select::make('category')
+                    ->options([
+                        'network' => 'Network',
+                        'Survival' => 'Survival',
+                        'Skyblock' => 'Skyblock',
+                    ])
+                    ->required(),
+    
+                RichEditor::make('content')
+                    ->required(),
             ]);
     }
 

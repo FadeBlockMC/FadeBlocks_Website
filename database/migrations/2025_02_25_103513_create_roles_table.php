@@ -15,8 +15,6 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->char('color', 6);
-            $table->unsignedInteger('power')->default(0);
-            $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
 

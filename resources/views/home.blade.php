@@ -16,10 +16,10 @@
                 <div class="grid grid-cols-3 gap-6">
                     <div class="col-span-2 space-y-6">
                         <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-h-96 overflow-y-auto">
-                            <p class="text-2xl font-bold text-yellow-400">Announcements</p>
+                            <p class="text-2xl font-bold text-yellow-400">Announcement</p>
         
                             @if($announcements->isEmpty())
-                                <p class="text-gray-400 mt-2">No announcements available.</p>
+                                <p class="text-gray-400 mt-2">No announcement available.</p>
                             @else
                                 @foreach($announcements as $announcement)
                                     <p class="text-gray-400 mt-2">{!! $announcement->content !!}</p>

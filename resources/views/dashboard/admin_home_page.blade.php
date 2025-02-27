@@ -23,7 +23,7 @@
     @endif
 
     <!-- Form to create announcement -->
-    <form action="{{ route('admin.announcements.store') }}" method="POST">
+    <form action="{{ route('admin..store') }}" method="POST">
         @csrf
         <textarea id="editor" name="content"></textarea>
         <br>

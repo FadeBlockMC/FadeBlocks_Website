@@ -13,11 +13,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
+
 class AnnouncementResource extends Resource
 {
     protected static ?string $model = Announcement::class;
 
-    protected static ?string $navigationGroup = 'Announcement';
+    protected static ?string $navigationGroup = 'Server';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -25,9 +29,9 @@ class AnnouncementResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('title')
+                TextInput::make('title')
                 ->required(),
-                Forms\Components\RichEditor::make('content')
+                RichEditor::make('content')
                     ->required(),
             ]);
     }
