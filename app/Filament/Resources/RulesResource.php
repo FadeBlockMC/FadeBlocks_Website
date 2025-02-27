@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Columns\TextColumn;
 
 
 class RulesResource extends Resource
@@ -47,7 +48,7 @@ class RulesResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('category')
+               TextColumn::make('category')
                 ->label('Category'),
             ])
             ->filters([

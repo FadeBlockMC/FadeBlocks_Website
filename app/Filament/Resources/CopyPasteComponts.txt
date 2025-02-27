@@ -4,4 +4,5 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TextEditor;
 use Filament\Forms\Components\Image;
 use Filament\Forms\Components\View;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\RichEditor;

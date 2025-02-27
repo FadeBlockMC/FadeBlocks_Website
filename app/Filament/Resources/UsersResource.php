@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\TextColumn;
 
 
 class UsersResource extends Resource
@@ -65,9 +66,8 @@ class UsersResource extends Resource
     {
         return $table
         ->columns([
-            Tables\Columns\TextColumn::make('id')->label('ID')->sortable(),
-            Tables\Columns\TextColumn::make('name')->label('Name')->searchable(),
-            Tables\Columns\TextColumn::make('role_id')->label('Roles')->searchable(),
+            TextColumn::make('id')->label('ID')->sortable(),
+            TextColumn::make('name')->label('Name')->searchable(),
         ])
             ->filters([
                 //

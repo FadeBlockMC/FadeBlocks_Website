@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\RichEditor;
 class StaffRulesResource extends Resource
 {
@@ -44,7 +45,8 @@ class StaffRulesResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')->label('Name')->searchable(),
+
             ])
             ->filters([
                 //
