@@ -15,8 +15,15 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->char('color', 6);
-            $table->unsignedInteger('power')->default(0);
-            $table->boolean('is_admin')->default(false);
+            $table->boolean('staff_channels')->default(false);
+            $table->boolean('send_announcements')->default(false);
+            $table->boolean('edit_rules')->default(false);
+            $table->boolean('edit_wiki')->default(false);
+            $table->boolean('edit_faq')->default(false);
+            $table->boolean('edit_permissions')->default(false);
+            $table->boolean('edit_staff_channels')->default(false);
+            $table->boolean('edit_roles')->default(false);
+            $table->boolean('edit_users')->default(false);
             $table->timestamps();
         });
 

@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $announcements = Announcement::latest()->get(); 
-        return view('home', compact('announcements')); 
+        $announcements = Announcement::all();
+        return view('home', ['announcements' => $announcements]);
     }
 }

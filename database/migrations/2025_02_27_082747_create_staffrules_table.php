@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('permission');
-            $table->unsignedInteger('role_id');
-
-            $table->foreign(columns: 'role_id')->references('id')->on('roles')->cascadeOnDelete();
+        Schema::create('staff_rules', function (Blueprint $table) {
+            $table->id();
+            $table->string('content');
+            $table->string('category');
+            $table->timestamps();
         });
-
     }
 
     /**
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('staffrules');
     }
 };
