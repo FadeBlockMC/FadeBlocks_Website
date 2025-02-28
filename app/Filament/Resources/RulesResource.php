@@ -36,6 +36,8 @@ class RulesResource extends Resource
                         'network' => 'Network',
                         'Survival' => 'Survival',
                         'Skyblock' => 'Skyblock',
+                        'Discord' => 'Discord',
+                        'Website' => 'Website',
                     ])
                     ->required(),
     
