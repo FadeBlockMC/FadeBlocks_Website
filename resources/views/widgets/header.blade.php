@@ -11,7 +11,7 @@
         
         <!-- Navigation Links -->
         <div class="flex space-x-6">
-            <a href="#" class="font-bold hover:text-blue-400">Start</a>
+            <a href="/" class="font-bold hover:text-blue-400">Home</a>
             <a href="#" class="font-bold hover:text-blue-400">Forum</a>
             <a href="#" class="font-bold hover:text-blue-400">Vote</a>
             <a href="/rules" class="font-bold hover:text-blue-400">Rules</a>
