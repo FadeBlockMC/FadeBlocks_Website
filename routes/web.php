@@ -24,6 +24,9 @@ Route::get('/apply', function () {
     return view('forums.home');
 });
 
+Route::get('/staff', function () {
+    return view('staff.staff');
+});
 
 Route::middleware([Authenticator::class])->group(function () {
 

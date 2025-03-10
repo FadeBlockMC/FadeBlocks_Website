@@ -10,4 +10,6 @@ class StaffGuide extends Model
     use HasFactory;
 
     protected $fillable = ['category', 'content']; 
+
+
 }
