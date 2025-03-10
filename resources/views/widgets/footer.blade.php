@@ -1,4 +1,4 @@
-<footer class="bg-black text-white py-10">
+<footer class="bg-black text-white py-10 mt-auto">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         
         <!-- About Us -->
@@ -19,13 +19,13 @@
                 <span>Useful Links</span>
             </h3>
             <ul class="mt-3 space-y-2 text-sm">
-                <li><a href="#" class="hover:text-yellow-500 transition">Home</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Server Rules</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Application</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Wiki</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Staff</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Leaderboards</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">FAQ</a></li>
+                <li><a href="/" class="hover:text-yellow-500 transition">Home</a></li>
+                <li><a href="/development" class="hover:text-yellow-500 transition">Server Rules</a></li>
+                <li><a href="/development" class="hover:text-yellow-500 transition">Application</a></li>
+                <li><a href="/development" class="hover:text-yellow-500 transition">Wiki</a></li>
+                <li><a href="/development" class="hover:text-yellow-500 transition">Staff</a></li>
+                <li><a href="/development" class="hover:text-yellow-500 transition">Leaderboards</a></li>
+                <li><a href="/development#" class="hover:text-yellow-500 transition">FAQ</a></li>
             </ul>
         </div>
 

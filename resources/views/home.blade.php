@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>FadeBlocks</title>
+    <title>Home | FadeBlocks</title>
+    <style>
+        body {
+            background-color: #2C2C33;
+            color: white;
+        }
+    </style>
 </head>
 
 <header>
     @include('widgets.header')
 </header>
 
-<!-- Main Layout: Announcements on the Left, Side Widgets on the Right -->
 <div class="max-w-6xl mx-auto px-4 grid grid-cols-3 gap-6">
     
-    <!-- Announcements (Left - 2/3 width) -->
     <div class="col-span-2">
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
             <p class="text-4xl font-bold text-yellow-400 mb-6">Announcements</p>

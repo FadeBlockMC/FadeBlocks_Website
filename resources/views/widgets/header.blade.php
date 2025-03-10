@@ -4,57 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .background-section {
+            background: url('/images/logo/Background.png') no-repeat center center;
+            background-size: cover;
+            min-height: 350px; /* Compact header */
+        }
+    </style>
 </head>
+<body class="text-white">
 
-<body class="bg-[#0D2B40] text-white">
-    <div class="container mx-auto flex flex-col items-center text-white relative">
+<!-- Header Section -->
+<header class="relative background-section pb-24">
+    <div class="container mx-auto text-center pt-6">
         
-        <!-- Navigation Links -->
-        <div class="flex space-x-6">
-            <a href="/" class="font-bold hover:text-blue-400">Home</a>
-            <a href="#" class="font-bold hover:text-blue-400">Forum</a>
-            <a href="#" class="font-bold hover:text-blue-400">Vote</a>
-            <a href="/rules" class="font-bold hover:text-blue-400">Rules</a>
-            <a href="#" class="font-bold hover:text-blue-400">Wiki</a>
-            <a href="#" class="font-bold hover:text-blue-400">More</a>
+        <!-- Logo + Main Call-to-Action Section -->
+        <div class="flex flex-col items-center">
+            <img src="images/logo/fadeblocksmc.png" alt="Game Logo" class="w-60 mb-4"> 
+            <p class="text-lg font-semibold">Learn how to join our server and start playing in 60 seconds</p>
+            
+            <div class="mt-4 bg-[#1A1A40] px-6 py-4 rounded-lg shadow-lg flex justify-between items-center w-full max-w-3xl">
+                <span class="text-yellow-400 text-xl font-bold">Play Now</span>
+                <a href="#" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-yellow-500">Join</a>
+            </div>
         </div>
 
-        <!-- Logo -->
-        <img src="{{ asset('images/logo/fadeblocksmc.png') }}" alt="" class="w-1/4 block mx-auto">
+        <!-- Minecraft Server & Discord Info (Side by Side, Fixed Spacing) -->
+        <div class="mt-4 mb-6 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+            <!-- Minecraft Server Info -->
+            <div class="bg-[#0E4AD9] flex items-center px-4 py-2 rounded-lg shadow-lg cursor-pointer bg-opacity-90">
+                <span class="bg-yellow-400 text-black font-bold px-3 py-1 rounded-lg text-lg" id="player-count">Loading...</span>
+                <span class="text-yellow-300 font-bold text-lg ml-3">play.fadeblocks.com</span>
+            </div>
 
-<div class="flex items-center w-full max-w-5xl mx-auto mt-6">
-    
-    <div class="bg-gray-900 p-4 rounded-lg flex items-center w-full h-[6rem]">
-        <div class="w-16 h-16 flex-shrink-0">
-            <img src="https://crafatar.com/renders/body/e088f399-8135-4d9f-ae8f-a60a13886965" 
-                alt="User Avatar" 
-                class="w-full h-full object-cover object-top rounded-md">
+            <!-- Discord Info -->
+            <div class="bg-[#28B4F3] flex items-center px-6 py-3 rounded-lg text-lg font-semibold shadow-lg bg-opacity-90">
+                <span class="bg-red-500 px-2 py-1 rounded text-white mr-2" id="discord-members">Loading...</span>
+                Join Our Discord
+                <img src="images/socials/discordlogo.svg" alt="Discord Icon" class="w-6 h-6 ml-2">
+            </div>
         </div>
 
-        <div class="ml-5 flex-grow">
-            <h2 class="text-2xl font-semibold text-cyan-400">Welcome to Fadeblocks</h2>
-            <p class="text-gray-400 text-base">To join our community, please login or register!</p>
+        <!-- Navigation Bar Merged at Bottom of Header -->
+        <div class="absolute bottom-0 left-0 w-full bg-blue-900 bg-opacity-60 shadow-lg">
+            <div class="flex justify-between items-center px-8 py-3">
+                
+                <!-- Navigation Menu -->
+                <nav class="w-full flex justify-center">
+                    <ul class="flex space-x-6">
+                        <li><a href="/" class="bg-blue-950 bg-opacity-80 text-yellow-400 font-bold px-4 py-2 rounded-md">Home</a></li>
+                        <li><a href="/forums" class="text-white hover:text-yellow-300 px-4 py-2">Forums</a></li>
+                        <li><a href="/vote" class="text-white hover:text-yellow-300 px-4 py-2">Vote</a></li>
+                        <li><a href="/staff" class="text-white hover:text-yellow-300 px-4 py-2">Staff</a></li>
+                        <li><a href="/members" class="text-white hover:text-yellow-300 px-4 py-2">Members</a></li>
+                        <li><a href="/rules" class="text-white hover:text-yellow-300 px-4 py-2">Rules</a></li>
+                        <li><a href="/stats" class="text-white hover:text-yellow-300 px-4 py-2">Stats</a></li>
+                        <li><a href="/punishments" class="text-white hover:text-yellow-300 px-4 py-2">Punishments</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Store Button -->
+                <a href="#" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-lg text-xl shadow-lg hover:bg-yellow-500 flex items-center">
+                    <img src="images/Icons/Cart.png" alt="Cart Icon" class="w-6 h-6 mr-2">
+                    <span>Store</span>
+                </a>
+            </div>
         </div>
 
-        <div class="space-x-3 flex-shrink-0">
-            <a href="/login" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 px-5 rounded-md text-md">
-                Login
-            </a>
-            <a href="/register" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 px-5 rounded-md text-md">
-                Register
-            </a>
-        </div>
     </div>
-
-    <a href="https://store.fadeblocks.com" 
-        class="relative ml-4 w-[15rem] h-[6rem] flex flex-col justify-center items-center text-white rounded-lg border-2 border-white/30 shadow-lg transition-transform hover:scale-105 overflow-hidden"
-        style="background: url('{{ asset('images/Other/Overworld.png') }}') center/cover no-repeat, rgba(0, 173, 239, 0.6); background-blend-mode: overlay;">
-        <div class="absolute inset-0 bg-cyan-600/60"></div>
-        <span class="relative text-xl font-bold italic">STORE</span>
-        <span class="relative text-sm mt-1">Shop now!</span>
-        <img src="{{ asset('images/Icons/Cart.png') }}" alt="Cart Icon" class="absolute right-4 top-4 w-6 h-6 opacity-80 relative">
-    </a>
-</div>
+</header>
 
 </body>
+
+<script>
+    // Fetch Minecraft server info
+    fetch('https://api.mcsrvstat.us/2/play.fadeblocks.com')
+        .then(response => response.json())
+        .then(data => {
+            if (data.online) {
+                document.getElementById('player-count').innerText = data.players.online;
+            } else {
+                document.getElementById('player-count').innerText = 'Server Offline';
+            }
+        })
+        .catch(error => {
+            document.getElementById('player-count').innerText = 'N/A';
+            console.error('Error fetching server data:', error);
+        });
+
+    // Fetch Discord members count
+    fetch('https://discord.com/api/guilds/1298717684439191573/widget.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('discord-members').innerText = data.presence_count;
+        })
+        .catch(error => {
+            document.getElementById('discord-members').innerText = 'N/A';
+            console.error('Error fetching Discord members:', error);
+        });
+</script>
+
 </html>
