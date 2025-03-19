@@ -4,43 +4,26 @@ use App\Models\StaffList;
 $staffByRank = StaffList::all()->groupBy('rank');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Staff</title>
-    <style>
-        body {
-            background-color: #F4EFFA; /* Light purple background */
-        }
-    </style>
-</head>
+@extends('widgets.layout')
 
-<header>
-    @include('widgets.header')
-</header>
+@section('title', 'Coming Soon | FadeBlocks')
 
-<body class="text-gray-900">
-
+@section('content')
+<div class="grid grid-cols-1 gap-6">
 <div class="container mx-auto py-10">
     <h1 class="text-4xl font-bold text-left text-purple-700 mb-4">Meet our team!</h1>
 
-<a href="/apply" class="block w-full max-w-3xl ml-6">
-    <div class="bg-yellow-400 text-black py-3 px-6 flex justify-between items-center rounded-lg shadow-md mb-6 hover:bg-yellow-500 transition">
+    <a href="/apply" class="block w-full max-w-3xl mx-auto">
+    <div class="bg-yellow-400 text-black py-4 px-6 flex justify-between items-center rounded-lg shadow-lg mb-6 hover:bg-yellow-500 transition duration-300">
         <div class="flex items-center space-x-3">
-            <p class="font-bold text-md">
-                Would you like to join the Fadeblocks staff team? Apply now!
-            </p>
+            <span class="text-lg font-semibold">Would you like to join the FadeBlocks staff team? Apply now!</span>
         </div>
         <!-- Right Arrow Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
     </div>
 </a>
-
     <?php
     // Define staff roles to display in order
     $ranks = [
@@ -81,9 +64,7 @@ $staffByRank = StaffList::all()->groupBy('rank');
     <?php endforeach; ?>
 
 </div>
+</div>
+@endsection
 
-</body>
 
-<footer>
-    @include('widgets.footer')
-</footer>

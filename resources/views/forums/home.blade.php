@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: #2C2C33;
-            color: white;
-        }
-    </style>
-</head>
-    @include('widgets.header')
-    
-</header>
-<body>
+
+@extends('widgets.layout')
+
+<title>Appeals | Fadeblocks</title>
+
+
+@section('content')
 <div class="container">
+    
     <h2 class="text-purple-700 text-2xl font-bold mb-4">Applications & Reports</h2>
     <div class="grid grid-cols-2 gap-4">
         <a href="{{ url('/applications/staff') }}" class="block p-4 bg-white shadow-md rounded-lg">
@@ -47,4 +37,6 @@
         </a>
     </div>
 </div>
-</body>
+@endsection
+
+
