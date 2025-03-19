@@ -33,6 +33,7 @@ class AnnouncementResource extends Resource
                 ->required(),
                 RichEditor::make('content')
                     ->required(),
+                    // todo make it the custom richeditor
             ]);
     }
 

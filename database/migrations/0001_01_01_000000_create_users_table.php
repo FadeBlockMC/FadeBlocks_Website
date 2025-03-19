@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedInteger('role_id')->default(1);
+            $table->unsignedInteger('role_id')->default(16);
             $table->text('avatar')->nullable();
             $table->string('access_token')->nullable();
-            $table->string('last_login_ip', 45)->nullable();
+            $table->string('last_login_ip', length: 45)->nullable();
             $table->timestamp('last_login_at')->nullable();
+            $table->boolean('is_staff')->default(false);
             $table->boolean('is_banned')->default(false);
             $table->rememberToken();
             $table->timestamps();
