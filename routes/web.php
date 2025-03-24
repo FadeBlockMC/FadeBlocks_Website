@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/rules', Rules::class);
+Route::get('/rules', function () {
+    return view('rules.rules');
+});
 
 // apply
 
@@ -28,13 +30,13 @@ Route::get('/staff', function () {
     return view('staff.staff');
 });
 
-Route::middleware([Authenticator::class])->group(function () {
+// Route::middleware([Authenticator::class])->group(function () {
 
 
-    Route::get('/applications/staff', [ApplicationController::class, 'staff']);
-    Route::get('/applications/media', [ApplicationController::class, 'media']);
-    Route::get('/applications/developer', [ApplicationController::class, 'developer']);
-    Route::post('/applications/store', [ApplicationController::class, 'store'])->name('application.store');
+Route::get('/applications/staff', [ApplicationController::class, 'staff']);
+Route::get('/applications/media', [ApplicationController::class, 'media']);
+Route::get('/applications/developer', [ApplicationController::class, 'developer']);
+Route::post('/applications/store', [ApplicationController::class, 'store'])->name('application.store');
 
 // Appeal Routes
 Route::get('/appeals/punishment', [ReportController::class, 'punishment']);
@@ -44,7 +46,7 @@ Route::get('/reports/player', [ReportController::class, 'player']);
 Route::get('/reports/bug', [ReportController::class, 'bug']);
 Route::post('/reports/store', [ReportController::class, 'store'])->name('reports.store');
 
-});
+// });
 
 
 Route::get('/development', function () {

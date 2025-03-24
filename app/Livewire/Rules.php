@@ -1,26 +1,15 @@
 <?php
-
 namespace App\Livewire;
 
 use Livewire\Component;
 
 class Rules extends Component
 {
-    public $currentSection = 'Network';
+    public $activeRule = 'general';
 
-    public $sections = [
-        'Network' => 'Dit zijn de regels voor het hele netwerk...',
-        'Skyblock' => 'Skyblock regels: Geen griefing, geen duping...',
-        'Survival' => 'Survival regels: PvP is optioneel, geen hacks...',
-        'Discord' => 'Discord regels: Respecteer anderen, geen spam...',
-        'Website' => 'Website regels: Geen ongepaste content, respecteer anderen...',
-    ];
-
-    public function setSection($section)
+    public function setRule($rule)
     {
-        if (array_key_exists($section, $this->sections)) {
-            $this->currentSection = $section;
-        }
+        $this->activeRule = $rule;
     }
 
     public function render()
@@ -28,4 +17,3 @@ class Rules extends Component
         return view('livewire.rules');
     }
 }
-

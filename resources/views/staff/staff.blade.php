@@ -2,69 +2,56 @@
 use App\Models\StaffList; 
 
 $staffByRank = StaffList::all()->groupBy('rank');
+
+$ranks = Roles::all()->pluck('name', 'name')->toArray();
 ?>
 
 @extends('widgets.layout')
 
-@section('title', 'Coming Soon | FadeBlocks')
+@section('title', 'Meet Our Team | FadeBlocks')
 
 @section('content')
-<div class="grid grid-cols-1 gap-6">
-<div class="container mx-auto py-10">
-    <h1 class="text-4xl font-bold text-left text-purple-700 mb-4">Meet our team!</h1>
+<div class="container mx-auto py-10 w-full max-w-6xl">
 
+    <h1 class="text-4xl font-extrabold text-purple-700 mb-6">Meet Our Team!</h1>
+
+    <!-- Apply Button -->
     <a href="/apply" class="block w-full max-w-3xl mx-auto">
-    <div class="bg-yellow-400 text-black py-4 px-6 flex justify-between items-center rounded-lg shadow-lg mb-6 hover:bg-yellow-500 transition duration-300">
-        <div class="flex items-center space-x-3">
+        <div class="bg-yellow-400 text-black py-4 px-6 flex justify-between items-center rounded-lg shadow-lg mb-8 hover:bg-yellow-500 transition duration-300">
             <span class="text-lg font-semibold">Would you like to join the FadeBlocks staff team? Apply now!</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
         </div>
-        <!-- Right Arrow Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-    </div>
-</a>
-    <?php
-    // Define staff roles to display in order
-    $ranks = [
-        'owner' => 'Owner',
-        'operator' => 'Operator',
-        'developer' => 'Developer',
-        'sradmin' => 'Sr. Admin',
-        'admin' => 'Admin',
-        'srmod' => 'Sr. Mod',
-        'moderator' => 'Moderator',
-        'helper' => 'Helper',
-        'trainee' => 'Trainee',
-        'builder' => 'Builder',
-    ];
+    </a>
 
-    foreach ($ranks as $rankKey => $rankTitle) :
-        if (!isset($staffByRank[$rankKey])) continue;
-    ?>
+    @foreach ($ranks as $rank => $rankTitle)
+        @if (!isset($staffByRank[$rank]))
+            @continue
+        @endif
 
-    <!-- Staff Section -->
-    <section class="mb-8">
-        <h2 class="text-xl font-bold text-purple-700 mb-4"><?= htmlspecialchars($rankTitle) ?></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white p-6 rounded-lg shadow-lg">
-            <?php foreach ($staffByRank[$rankKey] as $staff): ?>
-                <div class="flex items-center space-x-4 bg-gray-100 p-4 rounded-lg">
-                    <img src="https://crafatar.com/avatars/<?= htmlspecialchars($staff->UUID) ?>?size=100&overlay" 
-                         alt="<?= htmlspecialchars($staff->minecraft_username) ?>'s Avatar" 
-                         class="w-16 h-16 ">
-                    <div>
-                        <h3 class="text-lg font-bold text-red-600"><?= htmlspecialchars($staff->minecraft_username) ?></h3>
-                        <p class="text-sm text-gray-600"><?= htmlspecialchars($staff->Tasks) ?></p>
-                    </div>
+        <!-- Staff Section -->
+        <section class="mb-5">
+            <div class="bg-blue-500 text-white text-lg font-bold px-4 py-2 rounded-t-lg shadow-md">
+                {{ $rankTitle }}
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-b-lg">
+                <div class="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    @foreach ($staffByRank[$rank] as $staff)
+                        <div class="flex items-center bg-gray-100 p-5 rounded-lg shadow-md hover:shadow-lg transition">
+                            <img src="https://crafatar.com/avatars/{{ $staff->UUID }}?size=100&overlay" 
+                                 alt="{{ $staff->minecraft_username }}'s Avatar" 
+                                 class="w-16 h-16 shadow-md border border-gray-200">
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">{{ $staff->minecraft_username }}</h3>
+                                <p class="text-sm text-gray-600">{{ $staff->Tasks ?: 'No tasks assigned' }}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            <?php endforeach; ?>
-        </div>
-    </section>
+            </div>
+        </section>
+    @endforeach
 
-    <?php endforeach; ?>
-
-</div>
 </div>
 @endsection
-
-
