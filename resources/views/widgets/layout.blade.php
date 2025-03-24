@@ -11,7 +11,6 @@
             color: white;
         }
 
-        /* Smooth Hover Effects */
         .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease-in-out;
@@ -21,8 +20,7 @@
 </head>
 <body>
 
-<!-- **Main Wrapper** -->
-<div class="main w-[70%] mx-auto mt-6 flex rounded-lg p-4">
+<div class="main w-[80%] mx-auto mt-6 flex rounded-lg p-4">
 
     <!-- Sidebar -->
     <aside class="w-64 bg-white h-auto p-6 rounded-lg flex-shrink-0">
@@ -31,17 +29,18 @@
         </div>
 
         <nav class="mt-6 space-y-4">
-            <a href="/" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>🏠</span><span class="ml-3">Home</span></a>
-            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>💬</span><span class="ml-3">Rules</span></a>
-            <a href="/staff" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>👥</span><span class="ml-3">Staff</span></a>
-            <a href="/apply" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>⚡</span><span class="ml-3">Applications</span></a>
-            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>🏆</span><span class="ml-3">Appeals</span></a>
-            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>🔨</span><span class="ml-3">Reports</span></a>
-            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span>📊</span><span class="ml-3">Vote for Java</span></a>
+            <a href="/" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span> <img src="{{ asset('images/Icons/Home.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">Home</span></a>
+            <a href="/rules" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Rules.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">Rules</span></a>
+            <a href="/staff" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Applications.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">Staff</span></a>
+            <a href="/apply" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Chat.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">forums</span></a>
+            <p>-<p>
+            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Faq.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">FAQ</span></a>
+            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Info.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">Wiki</span></a>
+            <a href="#" class="flex items-center text-gray-700 hover:text-blue-500 px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/Link.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">Vote for Java</span></a>
         </nav>
 
         <div class="mt-auto space-y-2">
-            <a href="#" class="flex items-center text-pink-500 hover:text-pink-600 font-semibold px-3 py-2 nav-link"><span>🛒</span><span class="ml-3">STORE</span></a>
+            <a href="#" class="flex items-center text-yellow-500 hover:text-yellow-600 font-semibold px-3 py-2 nav-link"><span><img src="{{ asset('images/Icons/cart.png') }}" alt="Logo" class="w-6 h-6"></span><span class="ml-3">STORE</span></a>
         </div>
     </aside>
 
@@ -70,13 +69,61 @@
 
     <!-- Right Sidebar -->
     <div class="col-span-1 w-72 space-y-6 ml-6">
-        <div class="bg-white p-4 rounded-lg shadow-md smooth-shadow">
-            <p class="text-yellow-500 font-bold text-xl">Server Status</p>
-            <p class="text-green-500 mt-2">Minecraft Servers: 0/100 Online</p>
-            <button class="bg-green-500 px-4 py-2 rounded-lg mt-2 text-white hover:bg-green-600 transition">COPY</button>
-            <p class="text-blue-500 mt-4">Discord Server: 17 Members Online</p>
-            <button class="bg-blue-500 px-4 py-2 rounded-lg mt-2 text-white hover:bg-blue-600 transition">JOIN</button>
+
+    <div class="bg-white p-6 rounded-lg shadow-lg smooth-shadow w-full max-w-xs">
+    <p class="text-yellow-500 font-bold text-lg mb-3">Be a part of the community!</p>
+
+            <div class="flex space-x-4 mt-2">
+                <!-- Login Button -->
+                <a href="/login" class="flex-1 bg-blue-500 text-white text-center py-2 rounded-lg font-semibold shadow-md hover:bg-blue-600 transition">
+                    Login
+                </a>
+
+                <!-- Register Button -->
+                <a href="/register" class="flex-1 bg-green-500 text-white text-center py-2 rounded-lg font-semibold shadow-md hover:bg-green-600 transition">
+                    Register
+                </a>
+            </div>
         </div>
+
+        <div class="bg-[#5865F2] p-5 rounded-2xl shadow-lg w-full max-w-xs text-white flex flex-col">
+    <!-- Header with Icon -->
+    <div class="flex items-center space-x-3">
+        <img src="{{ asset('images/socials/minecraft-block.png') }}" alt="Minecraft" class="w-8 h-8">
+        <p class="text-lg font-bold">play.fadeblocks.com (placeholder)</p>
+    </div>
+
+    <!-- Player Count -->
+    <p class="text-sm text-gray-200 mt-1">Join our <span class="font-semibold text-white">0</span> Players online</p>
+
+    <!-- Play Button -->
+    <a href="/play" class="flex justify-between items-center mt-4 bg-white text-[#5865F2] py-3 px-5 rounded-full font-semibold shadow-md hover:bg-gray-200 transition-all duration-300 ease-in-out">
+        <span class="text-md">I want to play</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </a>
+</div>
+
+        <!-- hexcode 5865F2 -->
+        <div class="bg-[#5865F2] p-4 rounded-lg shadow-lg flex items-center justify-between text-white w-full max-w-xs">
+    <div>
+        <div class="flex items-center space-x-3">
+            <img src="{{ asset('images/socials/discord-logo-white.png') }}" alt="Discord" class="w-35 h-8">
+        </div>
+        
+        <p class="text-sm text-white opacity-80 mt-1" id="member-count">Members Online</p>
+    </div>
+
+    <!-- Clickable Arrow Button -->
+    <a href="https://discord.gg/yourserver" class="bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-40 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </a>
+</div>
+
+
 
         <div class="bg-white p-4 rounded-lg shadow-md smooth-shadow">
             <p class="text-yellow-500 font-bold text-xl">Social Media</p>
@@ -112,7 +159,7 @@
             </h3>
             <ul class="mt-3 space-y-2 text-sm">
                 <li><a href="/" class="hover:text-yellow-500 transition">Home</a></li>
-                <li><a href="/development" class="hover:text-yellow-500 transition">Server Rules</a></li>
+                <li><a href="/rules" class="hover:text-yellow-500 transition">Server Rules</a></li>
                 <li><a href="/development" class="hover:text-yellow-500 transition">Application</a></li>
                 <li><a href="/development" class="hover:text-yellow-500 transition">Wiki</a></li>
                 <li><a href="/development" class="hover:text-yellow-500 transition">Staff</a></li>
@@ -162,3 +209,40 @@
 
 </body>
 </html>
+<!-- google api -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBWZ5J0YWJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JBWZ5J0YWJ');
+
+// discord api
+    fetch('https://discord.com/api/guilds/1298717684439191573/widget.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('member-count').innerText = `${data.presence_count} users Online`;
+        })
+        .catch(error => {
+            document.getElementById('member-count').innerText = 'Unable to load data';
+            console.error('Error fetching Discord data:', error);
+        });
+
+
+
+// minecraft server api
+fetch('https://api.mcsrvstat.us/2/play.fadeblocks.com')
+        .then(response => response.json())
+        .then(data => {
+            if (data.online) {
+                document.getElementById('player-count').innerText = `Join our ${data.players.online} Players that is currently online`;
+            } else {
+                document.getElementById('player-count').innerText = 'Server Offline';
+            }
+        })
+        .catch(error => {
+            document.getElementById('player-count').innerText = 'Unable to fetch server data';
+            console.error('Error:', error);
+        });
+</script>

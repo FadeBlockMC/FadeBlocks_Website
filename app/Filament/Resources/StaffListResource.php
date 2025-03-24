@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Support\Facades\Http;
+use App\Models\Roles;
 
 class StaffListResource extends Resource
 {
@@ -38,18 +39,7 @@ class StaffListResource extends Resource
                     ->dehydrated(), 
 
                 Select::make('rank')
-                    ->options([
-                        'owner' => 'owner',
-                        'operator' => 'operator',
-                        'developer' => 'developer',
-                        'sradmin' => 'sradmin',
-                        'admin' => 'admin',
-                        'srmod' => 'srmod',
-                        'moderator' => 'moderator',
-                        'helper' => 'helper',
-                        'trainee' => 'trainee',
-                        'builder' => 'builder',
-                    ])
+                    ->options(Roles::all()->pluck('name', 'name'))
                     ->required(),
 
                 TextInput::make('Tasks')
